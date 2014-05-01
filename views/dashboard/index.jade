@@ -1,0 +1,13 @@
+extends ../layouts/app
+
+block content
+  div(data-ng-controller='PostCtrl')
+    form(data-ng-submit='addPost()')
+      div.input
+        input(type='text', data-ng-model='newPost.title')
+      div.input
+        textarea(data-ng-model='newPost.body')
+      button Add
+    ul
+      li(data-ng-repeat='post in posts')
+        a(href='#/posts/{{post.id}}') {{post.title}}
