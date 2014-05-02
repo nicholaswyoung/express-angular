@@ -25,7 +25,7 @@ db.model('Post', Post);
 /**
  * Middleware and Routes
  */
-app.use(require('morgan')());
+//app.use(require('morgan')());
 app.use(require('body-parser')());
 app.use(config.assets.assets());
 app.use('/assets', config.assets.createServer());

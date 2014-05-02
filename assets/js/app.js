@@ -8,7 +8,7 @@ var App = window.App = angular.module('testApp', ['ngResource', 'ngRoute'])
 App.factory('Post', [
   '$resource',
   function ($resource) {
-    return $resource('posts/:id', { id: '@id' }, {
+    return $resource('/api/posts/:id', { id: '@id' }, {
       update: { method: 'PUT' }
     });
   }
@@ -41,14 +41,20 @@ App.controller('PostDetailCtrl', [
   }
 ]);
 
-App.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      controller: 'PostCtrl',
-      templateUrl: 'templates/posts/index'
-    })
-    .when('/posts/:id', {
-      templateUrl: 'templates/posts/show',
-      controller: 'PostDetailCtrl'
-    })
-}]);
+App.config([
+  '$routeProvider',
+  '$locationProvider',
+  function ($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $routeProvider
+      .when('/', {
+        controller: 'PostCtrl',
+        templateUrl: '/templates/posts/index'
+      })
+      .when('/posts/:id', {
+        templateUrl: '/templates/posts/show',
+        controller: 'PostDetailCtrl'
+      });
+    }
+]);
