@@ -27,7 +27,7 @@ exports.update = function (req, res, next) {
 }
 
 exports.destroy = function (req, res, next) {
-  Post.remove({ id: req.post.id }, function (err) {
+  req.post.remove(function (err) {
     if (err) return next(err);
     res.send(200);
   });

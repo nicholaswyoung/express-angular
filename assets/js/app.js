@@ -25,6 +25,16 @@ App.controller('PostCtrl', [
       $scope.posts.push(this.post);
       $scope.newPost = {};
     };
+
+    $scope.deletePost = function (post) {
+      angular.forEach($scope.posts, function (p, index) {
+        if (post.id === p.id) {
+          post.$delete(function () {
+            $scope.posts.slice(1, index);
+          });
+        }
+      })
+    }
   }
 ]);
 
