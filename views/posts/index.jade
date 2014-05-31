@@ -8,6 +8,6 @@ div(data-ng-controller='PostCtrl')
     button Add
   ul
     li(data-ng-repeat='post in posts')
-      a(href='#/posts/{{post.id}}') {{post.title}}
+      a(href='/posts/{{post.id}}') {{post.title}}
       span
         a(href='', data-ng-click='deletePost(post)') Delete
