@@ -1,5 +1,7 @@
 # express-angular
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nicholaswyoung/express-angular.svg)](https://greenkeeper.io/)
+
 This is a brief example application that demonstrates how to use Angular.js, Express.js, and MongoDB to create an interactive single-page application. It employs a lot of techniques that were previously used to construct server-side rendered applications, and bends them to support Angular.
 
 While this application may be useful to some, please don't treat it as an example of best practices... yet. I'm still learning to write Angular apps, and may have made several mistakes.
